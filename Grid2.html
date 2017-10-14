@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Grid</title>
+    <style>
+        #grid2 {
+            display: grid;
+            grid-template-rows: 30px 30px 30px 30px 30px;
+            grid-template-columns: 30px 30px 1fr 30px 30px;
+            background-color: #6d6d6d;
+            width: 500px;
+        }
+        
+        #grid2>div#item1 {
+            background-color: #ff6666;
+            grid-row: 1 / 3;
+            grid-column: 1 / 3;
+        }
+        
+        #grid2>div#item2 {
+            background-color: #44f5c9;
+            grid-row: 2 / 5;
+            grid-column: 2 / 5;
+        }
+        
+        #grid2>div#item3 {
+            background-color: #f5ff99;
+            grid-area: 3 / 3 / 4 / 6;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="grid2">
+        <div id="item1">1</div>
+        <div id="item2">2</div>
+        <div id="item3">3</div>
+    </div>
+</body>
+
+</html>
