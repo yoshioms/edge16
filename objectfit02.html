@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>object-fit</title>
+    <style>
+        img {
+            background-color: pink;
+        }
+        
+        .wide {
+            height: 150px;
+            width: 200px;
+        }
+        .contain {
+            object-fit: contain;
+        }
+
+	.pos {
+		object-position: 20% 20%;
+	}
+    </style>
+</head>
+
+<body>
+    <div>
+        <img src="object-fit.png" class="wide">
+        <img src="object-fit-h.png" class="wide">
+        <img src="object-fit-w.png" class="wide">
+    </div>
+    <div>
+        <img src="object-fit.png" class="contain wide">
+        <img src="object-fit-h.png" class="contain wide">
+        <img src="object-fit-w.png" class="contain wide">
+    </div>
+    <div>
+        <img src="object-fit.png" class="contain wide pos">
+        <img src="object-fit-h.png" class="contain wide pos">
+        <img src="object-fit-w.png" class="contain wide pos">
+    </div>
+</body>
+
+</html>

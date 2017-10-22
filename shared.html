@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    Shared Memory
+    <script>
+        var worker = new Worker("worker.js")
+        const sharedBuffer = new SharedArrayBuffer(10 * Int32Array.BYTES_PER_ELEMENT)
+        const sharedArray = new Int32Array(sharedBuffer)
+            // 初期化
+        for (var i = 0; i < sharedArray.length; i++) {
+            sharedArray[i] = i;
+        }
+
+        worker.onmessage = e => {
+            console.log(sharedArray[1])
+
+            Atomics.store(sharedArray, 0, 1)
+            console.log(sharedArray[1])
+
+            Atomics.store(sharedArray, 0, 2)
+            console.log(sharedArray[1])
+
+            Atomics.store(sharedArray, 0, 3)
+            console.log(sharedArray[1])
+
+            Atomics.store(sharedArray, 0, 4)
+            console.log(sharedArray[1])
+        }
+
+
+        function stop() {
+            sharedArray[9] = -1;
+            console.log(sharedArray[9])
+        }
+
+        worker.postMessage(sharedBuffer)
+    </script>
+
+    <button onclick="stop()">Stop</button>
+</body>
+
+</html>

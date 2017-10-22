@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>object-fit</title>
+    <style>
+        img {
+            background-color: rgb(187, 185, 185);
+        }
+        
+        .wide {
+            height: 150px;
+            width: 200px;
+            object-position: 20% 10%;
+        }
+        
+        .narrow {
+            height: 200px;
+            width: 150px;
+        }
+        
+        .fill {
+            object-fit: fill;
+        }
+        
+        .contain {
+            object-fit: contain;
+        }
+        
+        .cover {
+            object-fit: cover;
+        }
+        
+        .none {
+            object-fit: none;
+        }
+        
+        .scale-down {
+            object-fit: scale-down;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h2>nothing</h2>
+        <img src="object-fit.png" class="wide">
+        <img src="object-fit.png" class="narrow">
+        <img src="object-fit-h.png" class="wide">
+        <img src="object-fit-h.png" class="narrow">
+    </div>
+    <div>
+        <h2>fill</h2>
+        <img src="object-fit.png" class="fill wide">
+        <img src="object-fit.png" class="fill narrow">
+        <img src="object-fit-h.png" class="fill wide">
+        <img src="object-fit-h.png" class="fill narrow">
+    </div>
+    <div>
+        <h2>contain</h2>
+        <img src="object-fit.png" class="contain wide">
+        <img src="object-fit.png" class="contain narrow">
+        <img src="object-fit-h.png" class="contain wide">
+        <img src="object-fit-h.png" class="contain narrow">
+    </div>
+    <div>
+        <h2>cover</h2>
+        <img src="object-fit.png" class="cover wide">
+        <img src="object-fit.png" class="cover narrow">
+        <img src="object-fit-h.png" class="cover wide">
+        <img src="object-fit-h.png" class="cover narrow">
+    </div>
+    <div>
+        <h2>none</h2>
+        <img src="object-fit.png" class="none wide">
+        <img src="object-fit.png" class="none narrow">
+        <img src="object-fit-h.png" class="none wide">
+        <img src="object-fit-h.png" class="none narrow">
+    </div>
+    <div>
+        <h2>scale-down </h2>
+        <img src="object-fit.png" class="scale-down wide">
+        <img src="object-fit.png" class="scale-down narrow">
+        <img src="object-fit-h.png" class="scale-down wide">
+        <img src="object-fit-h.png" class="scale-down narrow">
+    </div>
+</body>
+
+</html>
